@@ -1,0 +1,5 @@
+1: npm init -y
+2: npm install express
+3: index.js
+4: cria um servidor em index.js mandar uma rota app.get com dados products pra testar
+5: usar o insomina pra consumir os dados
