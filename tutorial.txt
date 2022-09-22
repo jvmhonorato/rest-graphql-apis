@@ -30,4 +30,9 @@ GRAPHQL
 
 2: em main index.js importar apollo-server-express e o gql
 
-3:criar o typeDefs com os tipos , criar o resolvers com os dados  em seguida o server recebendo new ApolooServer retornando typeDefs e resolvers
+TYPEDEFS
+3: criar o typeDefs = gql `` com os types , Com type Query: que traz a consulta dos dados declarados, type Product que é o modelo pra ser inserido na type Query, o type Mutation que faz a manipulção dos dados o input ProductInput que é o modelo pra ser inserido no type Mutation
+
+4: No resolvers criar a Query com a lógica pra buscar os dados  e o Mutation com a lógica pra manipular os dados, o typedefs e o Mutation trabalham em sintonia
+
+5:

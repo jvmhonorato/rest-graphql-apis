@@ -12,12 +12,32 @@ app.use( routes)
 //GRAPHQL
 const typeDefs = gql`
 type Query {
-    getAllProducts: String
+    getAllProducts: [Product]
+}
+type Product {
+    id: String
+    name: String
+}
+type Mutation {
+    createProduct(input: ProductInput): Product
+}
+input ProductInput{
+    id: String!
+    name: String
 }
 `
 const resolvers = {
     Query: {
-        getAllProducts: () => 'All products'
+        getAllProducts: () =>[{id: '1', name:'All products'}]
+    },
+    Mutation:{
+        createProduct: (context,{input})=> {
+            const {id, name} = input
+            console.log(id, name)
+            return{
+                id,name
+            }
+        }
     }
 }
 const graphqlServer = new ApolloServer({
