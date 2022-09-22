@@ -1,5 +1,7 @@
 1: npm init -y
-2: npm install express
+2: npm install express body-parser
 3: index.js
-4: cria um servidor em index.js mandar uma rota app.get com dados products pra testar
+4: cria um servidor em index.js importare express, body-parser mandar uma rota app.get com dados products pra testar
 5: usar o insomina pra consumir os dados
+6: mandar um app.get depois consumir no insominia pra ver se retorna os dados
+7:mandar um app.post com o res req.body depois mandar no insomnia um post com dados em JSON pra retornar o req.body
