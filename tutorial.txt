@@ -1,7 +1,24 @@
 1: npm init -y
+
 2: npm install express body-parser
+
 3: index.js
+
 4: cria um servidor em index.js importare express, body-parser mandar uma rota app.get com dados products pra testar
+
 5: usar o insomina pra consumir os dados
+
 6: mandar um app.get depois consumir no insominia pra ver se retorna os dados
-7:mandar um app.post com o res req.body depois mandar no insomnia um post com dados em JSON pra retornar o req.body
+
+7: mandar um app.post com o res req.body depois mandar no insomnia um post com dados em JSON pra retornar o req.body
+
+8: criar routes/productsRouter.js para as rotas 
+
+9: criar controllers/productsController.js para os controllers
+
+10: OBS: criar  routes/index.js pra que todas as rotas criadas na pasta routes passe e carregue nele primeiro antes de ser mandado pra main index.js ou seja ele vai importar todos os arquivos router pra em seguida mandar pra main index.js p´ra ser carregado
+
+11:1. conttrollers faz a lógica e manda pra o arquivo.router.js na pasta routes  2.o arquivo.router.js uni a lógica com a rota e manda pra routes/index.js  3.routes/index.js carrega todas as rotas com os controllers e manda pra main index.jjs 
+
+12: PASSANDO A ROTA BASE EM ROUTES/INDEX.JS NÃO PRECISA DECLARAR ELA EM ROUTES/ARQUIVOROUTER.JS ex: routes/index.js: router.use('/products', products)
+arquivoRoter.js: router.delete('/:id',productsController.remove ) '/' ou '/:id' SE UM DIA PRECISAR ALTERAR BASTA ALTERAR O CAMPO EM ROUTES/INDEX.JS 
