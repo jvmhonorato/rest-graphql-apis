@@ -1,3 +1,5 @@
+RESTAPIs
+
 1: npm init -y
 
 2: npm install express body-parser
@@ -22,3 +24,10 @@
 
 12: PASSANDO A ROTA BASE EM ROUTES/INDEX.JS NÃO PRECISA DECLARAR ELA EM ROUTES/ARQUIVOROUTER.JS ex: routes/index.js: router.use('/products', products)
 arquivoRoter.js: router.delete('/:id',productsController.remove ) '/' ou '/:id' SE UM DIA PRECISAR ALTERAR BASTA ALTERAR O CAMPO EM ROUTES/INDEX.JS 
+
+GRAPHQL
+1: npm install apollo-server-express
+
+2: em main index.js importar apollo-server-express e o gql
+
+3:criar o typeDefs com os tipos , criar o resolvers com os dados  em seguida o server recebendo new ApolooServer retornando typeDefs e resolvers
