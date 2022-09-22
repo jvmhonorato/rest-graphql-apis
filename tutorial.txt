@@ -35,4 +35,10 @@ TYPEDEFS
 
 4: No resolvers criar a Query com a lógica pra buscar os dados  e o Mutation com a lógica pra manipular os dados, o typedefs e o Mutation trabalham em sintonia
 
-5:
+5:Criar graphql/index.js  e importar typedefs e resolvers e o import do apollo depois importar em main index.js o graphqlServer
+
+6: criar graphql/schema.graphql e tranferir conteúdo de typedefs pra lá, importar o FS e o path e usar ambos pra unir o __dirname com o arquivo schema.graphql. pois só vai importar dessa forma
+
+7: criar resolvers/index.js e products.js  dentro da pasta graphqltranferir o conteudo resolvers pra lá em seguida importa resolvers pra graphql/index.js novamente
+
+8: Em resolvers/inde.js desaclopamos tampbem a função de resolvers e mandamos pra resolvers/products.js em seguida importamos de volta pra o resolvers/index.js
