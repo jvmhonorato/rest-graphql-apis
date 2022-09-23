@@ -80,3 +80,10 @@ PEGAR PRODUTOS E ATUALIZAR POR CATEGORIAS
 14:em controllers/productControllers.js no getAll() criar uma condicional no qualse houver categoria ele retorna produtos por categoria se não houver ele apenas retorna todos os produtos pra buscar categoria via URL: http://localhost:3000/products?categoryId=10
 
 15:em controllers/productControllers.js no patch usei uma condicinal pra caso não haja oldProducty mandar uma mensagem, em seguidaudei o model updateCategories pra criar categorias dinamicamente na requisição
+
+REST GERENCIAR IMAGENS
+16: criar em routes/productsRouter.js uma nova rota POST IMAGES chamando a função createImage
+
+17: em controllers/productControllers.js criar o createImage() descontruindo o description e o url da req.body em seguida utilizando o model addImage  passando o ID do produto seguido da description e url
+
+18: em models/product.js criar o removeImage() com os parametros product_id e imageId em seguida em routes/productsRouter.js criar a rota.delete e por ultimo criar em controllers/productControllers.js o removeImage() com req.params.productId, req.params.id nos paramentros pra serem deletados 

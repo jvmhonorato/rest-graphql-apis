@@ -85,6 +85,11 @@ const init = connection =>{
         const conn = await connection
         await conn.query('insert into images (product_id, description, url) values (?,?,?)', [productId, ...data])
      }
+     //remove image
+     const removeImage = async(productId, imageId) => {
+        const conn = await connection
+        await conn.query('delete from images where (product_id = ? and id = ?)', [productId, imageId])
+     }
 
       // update product into declared category
     const updateCategories = async(productId, categoryIds) => {
@@ -108,7 +113,8 @@ const init = connection =>{
          findById,
          findAllByCategory,
          findAllPaginated,
-         addImage
+         addImage,
+         removeImage
     }
 }
 module.exports = init
