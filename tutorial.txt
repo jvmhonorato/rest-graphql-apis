@@ -42,3 +42,23 @@ TYPEDEFS
 7: criar resolvers/index.js e products.js  dentro da pasta graphqltranferir o conteudo resolvers pra lá em seguida importa resolvers pra graphql/index.js novamente
 
 8: Em resolvers/inde.js desaclopamos tampbem a função de resolvers e mandamos pra resolvers/products.js em seguida importamos de volta pra o resolvers/index.js
+
+LINKAR COM BANCO DE DADOS SQL
+
+1: npm install msql2
+
+2: criar migrations/1.js e por as migrations do projeto bancod de dados pra facilitar
+
+3: criar migration.js na raiz 
+
+4: executar o XAMPP e executar o migration.js no terminal pra testar
+
+5: criar models/product.js e add o models de criação de produtos dentro 
+
+6:no controllers/productControllers importar o models/product.js e o db.js vincular o db.js ao product.js no import no topo do arquivo
+
+LINKAR FINDALL NO GET
+7: em seguida tranforafamr o getAll em async e chamr o product.findAll() pra qunado fizer a requisição do insomina retornar os product do banci de dados
+
+LINKAR O CREATE NO POST
+8> em controllers/productControllers.js tornar o create async, abstrair o product e o price e chamar o await product.create([produc,price])

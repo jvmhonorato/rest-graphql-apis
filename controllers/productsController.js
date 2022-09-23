@@ -1,4 +1,5 @@
-
+const db = require('../db')
+const Product = require('../models/products')(db)
 //remove object
 const remove = (req, res)=> {
     console.log(req.body)
@@ -24,8 +25,9 @@ const put = (req, res)=> {
     })
 }
 //create a new object
-const create =  (req, res)=> {
-    console.log(req.body)
+const create =  async(req, res)=> {
+    const {product, price} = req.body
+    await Product.create([product, price])
     res.send({
         success: true,
         data: req.body
@@ -39,9 +41,10 @@ const getById = (req,res)=> {
     })
 }
 //serach all objects
-const getAll = (req, res)=> {
+const getAll = async(req, res)=> {
+    const products = await product.findAll()
     res.send({
-        products: ['all products']
+        products
     })
 }
 
