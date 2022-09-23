@@ -12,7 +12,15 @@ const remove = async(req, res)=> {
 //change only fexpesific field
 const patch = async (req, res)=> {
 
+
     const oldProduct = await Product.findById(req.params.id)
+    if(!oldProduct){
+        return res.send({
+             success: false,
+             message: 'Product not found'
+         })
+     }
+
     if(req.body.product){
         oldProduct.product = req.body.product
     }
@@ -20,7 +28,19 @@ const patch = async (req, res)=> {
         oldProduct.price = req.body.price
     }
     await Product.update(req.params.id, [oldProduct.product, oldProduct.price])
-    console.log(req.body)
+
+    //categories conditions
+    if(req.body.categories){
+        //update category
+        try{
+        await Product.updateCategories(req.params.id, req.body.categories)
+       }catch(err){
+        return res.send({
+            success: false,
+            message: 'Category not found'
+        })
+    }
+    }
     res.send({
         success: true
         
@@ -52,7 +72,13 @@ const getById = async(req,res)=> {
 }
 //serach all objects
 const getAll = async(req, res)=> {
-    const products = await product.findAll()
+    let products = null
+    if(req.query.categoryId){
+        products = await Product.findAllByCategory(req.query.categoryId)
+    }else{
+        products = await Product.findAll()
+    }
+     
     res.send({
         products
     })

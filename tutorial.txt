@@ -75,3 +75,8 @@ CRIAR E LINKAR FINDBYID
 
 LINKAR UPDATE AO PATCH
 13: em controllers/productControllers.js deixar o patch async passar ums const oldProduct pra buscar o product por req.paras.id, em seguida fazer duas condicionais pra mudar o product e o price old para atual dinamicamente na consulta e por ultimo dar um await Product.update
+
+PEGAR PRODUTOS E ATUALIZAR POR CATEGORIAS
+14:em controllers/productControllers.js no getAll() criar uma condicional no qualse houver categoria ele retorna produtos por categoria se não houver ele apenas retorna todos os produtos pra buscar categoria via URL: http://localhost:3000/products?categoryId=10
+
+15:em controllers/productControllers.js no patch usei uma condicinal pra caso não haja oldProducty mandar uma mensagem, em seguidaudei o model updateCategories pra criar categorias dinamicamente na requisição
