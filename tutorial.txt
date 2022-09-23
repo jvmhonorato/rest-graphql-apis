@@ -61,4 +61,17 @@ LINKAR FINDALL NO GET
 7: em seguida tranforafamr o getAll em async e chamr o product.findAll() pra qunado fizer a requisição do insomina retornar os product do banci de dados
 
 LINKAR O CREATE NO POST
-8> em controllers/productControllers.js tornar o create async, abstrair o product e o price e chamar o await product.create([produc,price])
+8: em controllers/productControllers.js tornar o create async, abstrair o product e o price e chamar o await product.create([produc,price])
+
+LINKA O REMOVE COM O DELETE 
+9:em controllers/productControllers.js deixar o remove async e dar um await Product.remoce(req.params.id) pra apagar o objeto cujo o id foi passado na url
+
+LINKAR UPDATE AO PUT 
+10:em controllers/productControllers.js tornar o put async em seguida abstrair  o product e price depois passar o await com o model Product.update usando os dois parametros da assinatura o id que é: req.params.id que vai na URL, e o data que é o: [product, price]
+
+CRIAR E LINKAR FINDBYID
+11: em models/products criar o findById e pssar o parâmetro (id) pra busca do id ser dinãmica
+12:em controllers/productControllers.js toranr getById async e buscar com resultado por id com: o model Product.findById(req.params.id)
+
+LINKAR UPDATE AO PATCH
+13: em controllers/productControllers.js deixar o patch async passar ums const oldProduct pra buscar o product por req.paras.id, em seguida fazer duas condicionais pra mudar o product e o price old para atual dinamicamente na consulta e por ultimo dar um await Product.update

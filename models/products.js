@@ -12,7 +12,7 @@ const init = connection =>{
     //update product
      const update = async(id, data) => {
         const conn = await connection
-        await conn.query('update products set product = ? where id = ?', [...data, id])
+        await conn.query('update products set product = ?, price = ? where id = ?', [...data, id])
     }
 
     //return all images with your related products
@@ -38,6 +38,12 @@ const init = connection =>{
           return products
 
       }
+      const findById = async(id)=> {
+        const conn = await connection
+       const [results] = await conn.query('select * from products where id ='+ id)
+        const productWithImages = await findImages(results)
+       return productWithImages[0]
+     }
 
       //return all products
      const findAll = async()=> {
@@ -99,6 +105,7 @@ const init = connection =>{
         update,
         updateCategories,
          findAll,
+         findById,
          findAllByCategory,
          findAllPaginated,
          addImage
