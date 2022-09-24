@@ -8,12 +8,22 @@ type Product {
 }
 type Mutation {
     createProduct(input: ProductInput): Product
+    deleteProduct(id: String!): Boolean
+    updateProduct(id: String! , input: ProductUpdateInput):Product
 }
+
 input productFilter {
     categoryId: String
 }
+
 input ProductInput{
     
     product: String!
     price: Float!
+}
+
+input ProductUpdateInput{
+    product: String
+    price: Float
+    categories:[String]
 }

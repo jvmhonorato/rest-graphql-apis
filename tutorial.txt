@@ -97,6 +97,28 @@ GRAPHQL GetAllProducts
 
 GRAPHQL CREATE PRODUCT
 3:em schema.graphql define o model do objeto a ser craido, em seguida em resolvers/products.js passar a função createProduct linkada ao models/Product
-pra que  o produto seja criado no apolloserver
+pra que  o produto seja criado no apolloserver  OBS: não esquecer de passar a função por resolvers/index.js
 
-OBS: PRA CRIAR OBJETO NO GRAPGHQL SE RESUMIR UNIR EM RESOLVER/PRODUCT.JS OS ARQUIVOS MODELS/PRODUCTS.JS, DB.JS E SCHEMA.GRAPHQL
+GRAPHQL DELETE PRODUCT
+
+4:em schema/graphql criar a mutation deleteProduct, em seguida em resolvers/products.js criar o deleteProduct  co a função remove vinda de models/product.js  OBS: não esquecer de passar a função por resolvers/index.js
+
+GRAPHQL UPDATE PRODUCT
+
+5::em schema/graphql criar a mutation updateProduct,e o input ProductUpdateInput com os párametros de tipagem dos objetos,  em seguida em resolvers/products.js criar o updateProduct e passar no resolvers/index.js em seguida mapear no resolvers/index.js OBS: deixar  o ID do lado de fora(no Mutation) e obrigatório"!" 
+6: importar o ApooloError de apollo-server-express pra passar o retorno do error as condicionias sempre serão com input defernete de REST que eram com req.body
+OBS: QUNADO O OBJETO FOR OBRIGATORIAMENTE LIGADO AO ID PASSAR O ID FORA DO TYPE E SIM DENTRO DA PRÓPRIA Mutation
+
+GRAPHQL IMAGES
+
+7:
+
+
+
+
+
+
+
+
+
+OBS: PRA CRIAR OBJETO NO GRAPGHQL SE RESUMIR UNIR EM CRIAR O OBJETO EM SCHEMA.GRAPHQL DEPOIS CRIAR A FUNÇÃO RESOLVER/PRODUCT.JS COM OS PARÃMETROS DE ARQUIVOS MODELS/PRODUCTS.JS, DB.JS E 
