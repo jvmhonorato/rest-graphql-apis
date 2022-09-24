@@ -87,3 +87,16 @@ REST GERENCIAR IMAGENS
 17: em controllers/productControllers.js criar o createImage() descontruindo o description e o url da req.body em seguida utilizando o model addImage  passando o ID do produto seguido da description e url
 
 18: em models/product.js criar o removeImage() com os parametros product_id e imageId em seguida em routes/productsRouter.js criar a rota.delete e por ultimo criar em controllers/productControllers.js o removeImage() com req.params.productId, req.params.id nos paramentros pra serem deletados 
+
+OBS: PRA MANIPULAR OBJETOS EM REST SE RESUME UNIR EM CONTROLLERS/PRODUCTCONTROLLERS.JS O ARQUIVO MODELS/PRODUCS.JS, DB.JS E PASSAR PRA ROUTES/PRODUCTrOUTER.JS
+
+GRAPHQL GetAllProducts
+1:Em schema.graphql criar filter com getallProducts em seguida criar input productFIlter pra anexar na Query e no type Product por product e price ou seja por valores correpondentes ao conteudo do banco de dados
+
+2: depois em resolvers/products.js importar o db e o models/product em seguida no getAllProducts inserir condicinal de filtragem por categoria pra retornar produtos listados na categoria ou retornar todos os produtos
+
+GRAPHQL CREATE PRODUCT
+3:em schema.graphql define o model do objeto a ser craido, em seguida em resolvers/products.js passar a função createProduct linkada ao models/Product
+pra que  o produto seja criado no apolloserver
+
+OBS: PRA CRIAR OBJETO NO GRAPGHQL SE RESUMIR UNIR EM RESOLVER/PRODUCT.JS OS ARQUIVOS MODELS/PRODUCTS.JS, DB.JS E SCHEMA.GRAPHQL

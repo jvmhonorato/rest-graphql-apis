@@ -1,10 +1,26 @@
-const getAllProducts = () =>[{id: '1', name:'All products'}]
+const db = require('../../db')
+const Product = require('../../models/products')(db)
 
-const  createProduct = (context,{input})=> {
-    const {id, name} = input
-    console.log(id, name)
+const getAllProducts = async(context, {filter}) => {
+    let products = null
+    if(filter && filter.categoryId){
+        products = await Product.findAllByCategory(filter.categoryId)
+    }else{
+        products = await Product.findAll()
+    }
+     
+  
+    console.log(filter)
+    return products
+}
+
+const  createProduct = async(context,{input})=> {
+    
+    const {product, price} = input
+    await Product.create([product, price])
+
     return{
-        id,name
+        product, price
     }
 }
     module.exports = {
