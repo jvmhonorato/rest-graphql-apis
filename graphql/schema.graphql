@@ -5,11 +5,18 @@ type Product {
     id: String
     product: String
     price: Float
+    images: Image
+}
+type Image {
+    description:String
+    url: String
 }
 type Mutation {
     createProduct(input: ProductInput): Product
     deleteProduct(id: String!): Boolean
     updateProduct(id: String! , input: ProductUpdateInput):Product
+    createImageOnProduct(productId: String!, input: ImageInput):Image
+    deleteImageOnProduct(productId: String!, id: String!):Boolean
 }
 
 input productFilter {
@@ -20,6 +27,10 @@ input ProductInput{
     
     product: String!
     price: Float!
+}
+input ImageInput {
+    description: String!
+    url: String!
 }
 
 input ProductUpdateInput{

@@ -111,9 +111,12 @@ OBS: QUNADO O OBJETO FOR OBRIGATORIAMENTE LIGADO AO ID PASSAR O ID FORA DO TYPE 
 
 GRAPHQL IMAGES
 
-7:
+7: em schema/graphql criar a mutation createImageOnProduct com o ID fora(na Mutation) e obrigatorio, e criar o input imageInput e passar depois an createImageOnProduct, emn seguida em resolvers/products.js criar e exportar createImageOnProduct e por ultimo mapear em resolvers/index.js
 
+8:OBS: defini em resolvers;schema.graphql no type Product add image: Image pra retornar na consulta
 
+GRAPHQL DELETE IMAGES    
+9: em schema/graphql criar a mutation deleteImageOnProduct passanos o productId, id no parãmetro, em seguida em resolvers/product.js criar o deleteImageOnProduct com a funnçao do models/Product removeImage, e por ultimo mapear a fnução em resolvers/index.js
 
 
 
