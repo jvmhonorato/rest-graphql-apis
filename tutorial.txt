@@ -125,3 +125,25 @@ GRAPHQL DELETE IMAGES
 
 
 OBS: PRA CRIAR OBJETO NO GRAPGHQL SE RESUMIR UNIR EM CRIAR O OBJETO EM SCHEMA.GRAPHQL DEPOIS CRIAR A FUNÇÃO RESOLVER/PRODUCT.JS COM OS PARÃMETROS DE ARQUIVOS MODELS/PRODUCTS.JS, DB.JS E 
+
+
+
+
+
+
+JWT 
+10: npm install jsonwebtoken
+
+11:criar poc-jwt.js
+
+12: criar routes/authRouter.js e passar a rota post com um /login, em seguida mapear a rota em routes/index.js para seram manda por padrão pra main index.js
+
+13: criar controllers/authControllers.js  passar users e cham,r em authControllers
+
+14: em seguida start mysql DB e chamr no insominia
+
+15: criar uma condicional em auth verificando se o usuário existe, se existir executar o token dentro do bloc e retornra o token se as credencials forem certas ou um amensagem de erro se for errada
+
+OBS: passar no insominia em headers o Bearer e o authentication
+
+16: Em controllers/productControllers.js passa uma condicional nas operações de CRUD, atrelando req.headers.authorizations
