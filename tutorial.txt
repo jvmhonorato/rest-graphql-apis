@@ -144,6 +144,19 @@ JWT
 
 15: criar uma condicional em auth verificando se o usuário existe, se existir executar o token dentro do bloc e retornra o token se as credencials forem certas ou um amensagem de erro se for errada
 
-OBS: passar no insominia em headers o Bearer e o authentication
+OBS: passar no insominia  em headers o Bearer (token) e o authentication
 
 16: Em controllers/productControllers.js passa uma condicional nas operações de CRUD, atrelando req.headers.authorizations
+
+17: passar em routes/index.js um middleware
+
+18: Passando o middleware em authRouter.js ele deixará de ser glbal e só passará na chamada de /auth
+
+19: Passando o middleware em routes/productsRouter.js com o nome de needAuth e dentro dele passar as condicionais de autenticação, secret, jwt.verify e executar
+
+20: passar o needAuth na rota router.get('/:id') pra autenticar
+
+21: agora basta passar o o needAuth em todas as rotas que quiser que seja autenticada OU passar router.use(needAuth) pra ficae em todas as rotas de forma global
+22: pra descobrir quem mandou a requisição.. passar um payload no jwt.verify()
+
+23: criar utils/auth.js e guardar o middleware needAuth nele depois importar de volta pra  productRouter.js

@@ -94,12 +94,7 @@ const getById = async(req,res)=> {
 }
 //serach all objects
 const getAll = async(req, res)=> {
-    if(req.headers && req.headers.authorization){
-        const header = req.headers.authorization
-        const headerParts = header.split(' ')
-        const secret = 'chavesecret1234'
-        try{
-        jwt.verify(headerParts[1],secret)
+  console.log(res.locals.user)
         let products = null
         if(req.query.categoryId){
             products = await Product.findAllByCategory(req.query.categoryId)
@@ -107,20 +102,13 @@ const getAll = async(req, res)=> {
             products = await Product.findAll()
         }
          
-         return res.send({
+         res.send({
             products
         })
 
-        }catch(err){
-            console.log('Deu ruim!')
-
-        }
+  
     }
-    res.send({
-        error: 'Wrong auth token'
-    })
-   
-}
+
 
 module.exports = {
     remove,
