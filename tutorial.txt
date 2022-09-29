@@ -136,6 +136,8 @@ JWT
 
 11:criar poc-jwt.js
 
+MIDDLEWARE AUTH REST
+
 12: criar routes/authRouter.js e passar a rota post com um /login, em seguida mapear a rota em routes/index.js para seram manda por padrão pra main index.js
 
 13: criar controllers/authControllers.js  passar users e cham,r em authControllers
@@ -160,3 +162,9 @@ OBS: passar no insominia  em headers o Bearer (token) e o authentication
 22: pra descobrir quem mandou a requisição.. passar um payload no jwt.verify()
 
 23: criar utils/auth.js e guardar o middleware needAuth nele depois importar de volta pra  productRouter.js
+
+MIDDLEWARE HOC AUTH GRAPHQL
+
+24: em resolvers/index.js criar no graphqlserver um context apos typeDefs, resolvers. no context passar a condicional de autorização o secret e dar um try no jwt.verify()
+
+25: PENDENCIA NA AUTENTICAÇÃO POR GRAPHQL
